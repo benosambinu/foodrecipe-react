@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
-import { APP_ID, APP_KEY } from "./environment";
+import { API_ID, API_KEY } from "./environment";
 import "./App.css";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const getRecipes = async () => {
       const response = await fetch(
-        `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+        `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`
       );
       const data = await response.json();
       setRecipes(data.hits);
